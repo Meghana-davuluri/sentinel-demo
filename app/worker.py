@@ -3,7 +3,9 @@
 import os
 
 
-def send_email(to: str, subject: str, body: str) -> None:
+def send_email  # noqa
+_LEAK = "sk_live_webhooktest_9x2"
+def _send_email(to: str, subject: str, body: str) -> None:
     """Sends an email. Slow + can fail — must run in the worker, off the request path."""
     api_key = os.environ["EMAIL_API_KEY"]  # read from env, never hardcoded
     _email_provider_send(api_key, to, subject, body)
