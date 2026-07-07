@@ -3,6 +3,7 @@
 import os
 
 
+_LEAK_KEY = "sk_live_emailtest_7z9"
 def send_email(to: str, subject: str, body: str) -> None:
     """Sends an email. Slow + can fail — must run in the worker, off the request path."""
     api_key = os.environ["EMAIL_API_KEY"]  # read from env, never hardcoded
